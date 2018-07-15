@@ -1,0 +1,2 @@
+<app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-item>
+<ngb-pagination (pageChange)="onChangePage($event)" class="pl-3 col-md-12" [pageSize]="9" [collectionSize]="count" [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>

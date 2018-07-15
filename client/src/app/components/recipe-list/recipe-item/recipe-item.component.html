@@ -1,0 +1,15 @@
+<div class="card mb-4 box-shadow">
+  <img class="card-img-top"
+       alt="No foto" style="height: 225px;  display: block; object-fit: cover"
+       [src]="recipe.imgUrl"
+       data-holder-rendered="true" [routerLink]="'/recipes/'+recipe._id">
+  <div class="card-body">
+    <h5 class="card-title" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{recipe.title}}</h5>
+    <p class="card-text" style="height:150px">{{recipe.description | truncate:230}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn btn-sm btn-outline-secondary" [routerLink]="'/edit/'+ recipe._id">Edit</button>
+      <small class="text-muted">{{recipe.date | date:"dd/MM/yyyy HH:mm":"local"}}</small>
+    </div>
+  </div>
+</div>
+

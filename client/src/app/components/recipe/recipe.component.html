@@ -1,0 +1,27 @@
+<div class="col-md-8 offset-md-2">
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter title" formControlName="title">
+      <div class="invalid-feedback" [style.display]="(form.get('title').valid || form.get('title').untouched)?'none':'block'">
+        This field is required!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="5" placeholder="Add description"
+                formControlName="description"></textarea>
+      <div class="invalid-feedback" [style.display]="(form.get('description').valid || form.get('description').untouched)?'none':'block'">
+        This field is required!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="imgUrl">Img url</label>
+      <input type="url" class="form-control" id="imgUrl" placeholder="Add path to img" formControlName="imgUrl">
+    </div>
+
+    <button *ngIf="!editMode" type="submit" class="btn btn-primary" [disabled]="form.invalid">Add Recipe</button>
+    <button *ngIf="editMode" type="submit" class="btn btn-primary" [disabled]="!form.dirty || form.invalid">Save changes</button>
+  </form>
+</div>
