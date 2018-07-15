@@ -1,0 +1,29 @@
+{
+  "name": "cookbook",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travel78/cookbook.git"
+  },
+  "author": "Yuriy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  }
+}
